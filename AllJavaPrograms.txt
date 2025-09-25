@@ -1,0 +1,559 @@
+Perfect, Lokesh — skipping file handling and moving straight into the next core Java topic: **Java Programs (Frequently Asked in Interviews)**. These are logic-based questions that test your understanding of loops, conditions, arrays, strings, and problem-solving.
+
+We’ll go through each with:
+
+- ✅ What the program does  
+- 🎯 Purpose  
+- 🌍 Real-time relevance  
+- 💡 Logic explanation  
+- 🧪 Simple code + output  
+
+Let’s start with the most common ones.
+
+---
+
+# 💡 11. Frequently Asked Java Programs
+
+---
+
+## ✅ 1. Reverse a String
+
+### 🎯 Purpose  
+Used to test string manipulation and loop logic.
+
+### 🌍 Real-Time Usage  
+Validating reversed inputs, captcha checks, or palindrome logic.
+
+### 💡 Logic  
+Loop from end to start and build reversed string.
+
+```java
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "Lokesh";
+        String rev = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev += str.charAt(i);
+        }
+        System.out.println("Reversed: " + rev);
+    }
+}
+```
+
+🧪 Output:
+```
+Reversed: hsekoL
+```
+
+---
+
+## ✅ 2. Check Palindrome
+
+### 🎯 Purpose  
+To verify if a string reads the same forward and backward.
+
+### 🌍 Real-Time Usage  
+Used in validations, security checks, or interview puzzles.
+
+### 💡 Logic  
+Reverse the string and compare with original.
+
+```java
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        String str = "madam";
+        String rev = new StringBuilder(str).reverse().toString();
+        System.out.println(str.equals(rev) ? "Palindrome" : "Not Palindrome");
+    }
+}
+```
+
+🧪 Output:
+```
+Palindrome
+```
+
+---
+
+## ✅ 3. Factorial of a Number
+
+### 🎯 Purpose  
+Tests loop logic and multiplication.
+
+### 🌍 Real-Time Usage  
+Used in mathematical calculations, recursion, and test data generation.
+
+### 💡 Logic  
+Multiply numbers from 1 to n.
+
+```java
+public class Factorial {
+    public static void main(String[] args) {
+        int num = 5, fact = 1;
+        for (int i = 1; i <= num; i++) {
+            fact *= i;
+        }
+        System.out.println("Factorial: " + fact);
+    }
+}
+```
+
+🧪 Output:
+```
+Factorial: 120
+```
+
+---
+
+## ✅ 4. Fibonacci Series
+
+### 🎯 Purpose  
+Tests loop logic and number generation.
+
+### 🌍 Real-Time Usage  
+Used in test data generation, recursive logic, and puzzles.
+
+### 💡 Logic  
+Start with 0 and 1, then sum previous two numbers.
+
+```java
+public class Fibonacci {
+    public static void main(String[] args) {
+        int n = 7, a = 0, b = 1;
+        System.out.print("Fibonacci: ");
+        for (int i = 1; i <= n; i++) {
+            System.out.print(a + " ");
+            int sum = a + b;
+            a = b;
+            b = sum;
+        }
+    }
+}
+```
+
+🧪 Output:
+```
+Fibonacci: 0 1 1 2 3 5 8
+```
+
+---
+
+## ✅ 5. Swap Two Numbers (Without Temp)
+
+### 🎯 Purpose  
+Tests arithmetic logic and variable manipulation.
+
+### 🌍 Real-Time Usage  
+Used in sorting, data shuffling, and puzzles.
+
+### 💡 Logic  
+Use addition and subtraction to swap.
+
+```java
+public class SwapNumbers {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.println("a: " + a + ", b: " + b);
+    }
+}
+```
+
+🧪 Output:
+```
+a: 10, b: 5
+```
+
+---
+
+Let me know when you’re ready — I’ll continue with more programs like:
+
+- Prime number check  
+- Armstrong number  
+- Count vowels/consonants  
+- Find max/min in array  
+- Sort array  
+- Anagram check  
+- Reverse number  
+- Sum of digits  
+- Second largest  
+- Frequency of characters
+
+You’re building a logic toolkit that’s fast, clean, and interview-ready.
+
+
+
+
+Let’s keep rolling, Lokesh — next up in your Java program mastery is a fresh batch of **frequently asked logic programs**. These are perfect for interviews and real-world problem solving. I’ll continue with the same structure: clear purpose, real-time relevance, logic, code, and output.
+
+---
+
+# 💡 More Java Logic Programs
+
+---
+
+## ✅ 6. Check Prime Number
+
+### 🎯 Purpose  
+To verify if a number is divisible only by 1 and itself.
+
+### 🌍 Real-Time Usage  
+Used in test data generation, filtering, and logic puzzles.
+
+### 💡 Logic  
+Loop from 2 to n/2 and check for divisibility.
+
+```java
+public class PrimeCheck {
+    public static void main(String[] args) {
+        int num = 17;
+        boolean isPrime = true;
+
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        System.out.println(isPrime ? "Prime" : "Not Prime");
+    }
+}
+```
+
+🧪 Output:
+```
+Prime
+```
+
+---
+
+## ✅ 7. Armstrong Number (e.g., 153 → 1³ + 5³ + 3³ = 153)
+
+### 🎯 Purpose  
+To test digit extraction and power calculation.
+
+### 🌍 Real-Time Usage  
+Used in puzzles, validations, and numeric logic.
+
+### 💡 Logic  
+Split digits, cube each, sum, and compare with original.
+
+```java
+public class Armstrong {
+    public static void main(String[] args) {
+        int num = 153, sum = 0, temp = num;
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += digit * digit * digit;
+            temp /= 10;
+        }
+        System.out.println(sum == num ? "Armstrong" : "Not Armstrong");
+    }
+}
+```
+
+🧪 Output:
+```
+Armstrong
+```
+
+---
+
+## ✅ 8. Count Frequency of Characters
+
+### 🎯 Purpose  
+To count how many times each character appears.
+
+### 🌍 Real-Time Usage  
+Used in string analysis, validations, and data parsing.
+
+### 💡 Logic  
+Use a HashMap to store character counts.
+
+```java
+import java.util.*;
+
+public class CharFrequency {
+    public static void main(String[] args) {
+        String str = "lokesh";
+        Map<Character, Integer> freq = new HashMap<>();
+
+        for (char ch : str.toCharArray()) {
+            freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+        }
+
+        System.out.println(freq);
+    }
+}
+```
+
+🧪 Output:
+```
+{l=1, o=1, k=1, e=1, s=1, h=1}
+```
+
+---
+
+## ✅ 9. Check Anagram (same letters, different order)
+
+### 🎯 Purpose  
+To compare two strings for same character set.
+
+### 🌍 Real-Time Usage  
+Used in validations, search, and security checks.
+
+### 💡 Logic  
+Sort both strings and compare.
+
+```java
+import java.util.Arrays;
+
+public class AnagramCheck {
+    public static void main(String[] args) {
+        String a = "listen";
+        String b = "silent";
+
+        char[] arr1 = a.toCharArray();
+        char[] arr2 = b.toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        System.out.println(Arrays.equals(arr1, arr2) ? "Anagram" : "Not Anagram");
+    }
+}
+```
+
+🧪 Output:
+```
+Anagram
+```
+
+---
+
+## ✅ 10. Reverse a Number
+
+### 🎯 Purpose  
+To reverse digits of an integer.
+
+### 🌍 Real-Time Usage  
+Used in numeric validations and formatting.
+
+### 💡 Logic  
+Extract digits and rebuild in reverse order.
+
+```java
+public class ReverseNumber {
+    public static void main(String[] args) {
+        int num = 1234, rev = 0;
+        while (num > 0) {
+            rev = rev * 10 + num % 10;
+            num /= 10;
+        }
+        System.out.println("Reversed: " + rev);
+    }
+}
+```
+
+🧪 Output:
+```
+Reversed: 4321
+```
+
+---
+
+Let me know when you’re ready — next we’ll cover:
+
+- Sum of digits  
+- Find second largest  
+- Sort array  
+- Sort strings alphabetically  
+- Remove duplicates  
+- Count words in a sentence
+
+You’re building a logic arsenal that’s clean, confident, and ready for any interview.
+
+
+
+Let’s power through the next set of Java programs, Lokesh — these are practical, frequently asked, and perfect for showcasing your logic-building skills. I’ll keep it crisp and clear with purpose, logic, code, and output.
+
+---
+
+# 💡 More Java Logic Programs (Continued)
+
+---
+
+## ✅ 11. Sum of Digits
+
+### 🎯 Purpose  
+To calculate the sum of all digits in a number.
+
+### 💡 Logic  
+Extract each digit using `%` and add to sum.
+
+```java
+public class SumDigits {
+    public static void main(String[] args) {
+        int num = 1234, sum = 0;
+        while (num > 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        System.out.println("Sum: " + sum);
+    }
+}
+```
+
+🧪 Output:
+```
+Sum: 10
+```
+
+---
+
+## ✅ 12. Find Second Largest in Array
+
+### 🎯 Purpose  
+To identify the second highest value in a list.
+
+### 💡 Logic  
+Track two variables: first and second largest.
+
+```java
+public class SecondLargest {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 5, 30};
+        int first = Integer.MIN_VALUE, second = Integer.MIN_VALUE;
+
+        for (int num : arr) {
+            if (num > first) {
+                second = first;
+                first = num;
+            } else if (num > second && num != first) {
+                second = num;
+            }
+        }
+        System.out.println("Second Largest: " + second);
+    }
+}
+```
+
+🧪 Output:
+```
+Second Largest: 20
+```
+
+---
+
+## ✅ 13. Sort Array (Ascending)
+
+### 🎯 Purpose  
+To arrange numbers in increasing order.
+
+### 💡 Logic  
+Use built-in `Arrays.sort()` method.
+
+```java
+import java.util.Arrays;
+
+public class SortArray {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 8, 1};
+        Arrays.sort(arr);
+        System.out.println("Sorted: " + Arrays.toString(arr));
+    }
+}
+```
+
+🧪 Output:
+```
+Sorted: [1, 2, 5, 8]
+```
+
+---
+
+## ✅ 14. Sort Strings Alphabetically
+
+### 🎯 Purpose  
+To arrange words in dictionary order.
+
+### 💡 Logic  
+Use `Arrays.sort()` on string array.
+
+```java
+import java.util.Arrays;
+
+public class SortStrings {
+    public static void main(String[] args) {
+        String[] names = {"Lokesh", "Rahul", "Amit"};
+        Arrays.sort(names);
+        System.out.println("Sorted: " + Arrays.toString(names));
+    }
+}
+```
+
+🧪 Output:
+```
+Sorted: [Amit, Lokesh, Rahul]
+```
+
+---
+
+## ✅ 15. Remove Duplicates from Array
+
+### 🎯 Purpose  
+To eliminate repeated values.
+
+### 💡 Logic  
+Use `HashSet` to store unique elements.
+
+```java
+import java.util.*;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 3, 4, 4};
+        Set<Integer> set = new HashSet<>();
+        for (int num : arr) {
+            set.add(num);
+        }
+        System.out.println("Unique: " + set);
+    }
+}
+```
+
+🧪 Output:
+```
+Unique: [1, 2, 3, 4]
+```
+
+---
+
+## ✅ 16. Count Words in a Sentence
+
+### 🎯 Purpose  
+To count how many words are in a string.
+
+### 💡 Logic  
+Split the string by spaces and count the array length.
+
+```java
+public class WordCount {
+    public static void main(String[] args) {
+        String sentence = "Lokesh is preparing for interviews";
+        String[] words = sentence.trim().split("\\s+");
+        System.out.println("Word Count: " + words.length);
+    }
+}
+```
+
+🧪 Output:
+```
+Word Count: 5
+```
+
+---
+
+Let me know when you’re ready — next we’ll move into **Selenium WebDriver**: architecture, setup, browser commands, locators, and real-time automation examples. You’re building a revision guide that’s clean, confident, and complete.
