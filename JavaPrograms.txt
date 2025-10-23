@@ -1,0 +1,194 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+ 
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        //Reverse String,
+        String name="Automation";
+        String rev="";
+        for(int i=name.length()-1;i>=0;i--){
+            rev=rev+name.charAt(i);
+        }
+        System.out.println("Reversed String is :"+rev);
+        //Factorial,
+        int num=5;
+        int fact=1;
+        for(int i=1;i<=num;i++){
+            fact=fact*i;
+        }
+        System.out.println("Factorial of +num+ is:"+fact);
+        //Fibonacci,
+        int sum=6,a=0,b=1;
+        for(int i=1;i<=sum;i++){
+            System.out.println("Fibonacci Series of 6 :"+a);
+            int number=a+b;
+            a=b;
+            b=number;
+        }
+        //Count Characters,
+        String str1="automation";
+        int count=0;
+        for(int i=0;i<str1.length();i++){
+            if(str1.charAt(i)=='a'){
+                count++;
+            }
+        }
+        System.out.println("Count of 'a' is :"+count);
+
+        //Remove duplicates in array,
+        int arr[]={10,20,30,10,20,30};
+        Set<Integer>set=new LinkedHashSet<>();
+        for(int numb:arr){
+            set.add(numb);
+        }
+        System.out.println("Removed duplicates :"+set);
+        //Swap numbers
+        int c=5,d=10;
+        int temp=c;
+        c=d;
+        d=temp;
+        System.out.println("Value of c is :"+c);
+        System.out.println("Value of d is :"+d);
+        //Largest in array,
+        int arr1[]={100,200,3000,4000,50000,1000};
+        int max=arr[0];
+        for(int i=0;i<arr1.length;i++){
+            if(arr1[i]>max){
+                max=arr1[i];
+            }
+        }
+        System.out.println("Largest in an array is :"+max);
+
+        //ArmStrong number,
+        int num1=153;
+        int copy=num1;
+        int target=0;
+        while(num1!=0){
+            int digit=num1%10;
+            target=target+(digit*digit*digit);
+            num1=num1/10;
+        }
+        if(target==copy){
+            System.out.println("It is ArmStrong number");
+        }else{
+            System.out.println("It is not an ArmStrong number");
+        }
+
+        //Sum of digits,
+        int num2=123456;
+        int sum1=0;
+        while(num2!=0){
+            int digit1=num2%10;
+            sum1=sum1+digit1;
+            num2=num2/10;
+        }
+        System.out.println("Sum of digits is :"+sum1);
+
+        //Anagram,
+        String s1="triangle";
+        String s2="integral";
+        char[] char1=s1.toCharArray();
+        char[] char2=s2.toCharArray();
+        Arrays.sort(char1);
+        Arrays.sort(char2);
+        if(Arrays.equals(char1,char2)){
+            System.out.println("It is anagram");
+        }else{
+        System.out.println("It is not anagram");    
+        }
+
+        //Remove duplicates and find missing,
+        int arr2[]={10,11,14,16,18,20,11,20,14,13};
+        Set<Integer>set1=new TreeSet<>();
+        for(int n1:arr2){
+            set1.add(n1);
+        }
+        System.out.println("Duplicates removed and alinged"+set1);
+        //missing,
+        List<Integer>missing=new ArrayList<>();
+        for(int i=10;i<=20;i++){
+            if(!set1.contains(i)){
+                missing.add(i);
+            }
+        }
+        System.out.println("Missing number is :"+missing);
+
+        //Find duplicates,
+        int arr3[]={10,20,30,40,50,10,20,40};
+        Set<Integer> org=new TreeSet<>();
+        Set<Integer> dup=new TreeSet<>();
+        for(int n3:arr3){
+            if(!org.add(n3)){
+                dup.add(n3);
+            }
+        }
+        System.out.println("Duplicates are :"+dup);
+
+        //Add an Array,
+        int arr4[]={10,20,30,40,50};
+        int addition=0;
+        for(int n4:arr4){
+            addition=addition+n4;
+        }
+        System.out.println("Addition of array is :"+addition);
+
+        //Reverse the number,
+        int n5=123456789;
+        int rev1=0;
+        while(n5!=0){
+            int d1=n5%10;
+            rev1=rev1*10+d1;
+            n5=n5/10;
+        }
+        System.out.println("Reverse the number is :"+rev1);
+
+        //Occurence,
+        String str10="aaaAAbbbBBccc2312321312@!@#@#@#CCddDD deEfff ghhhHiiiI";
+        Map<Character,Integer> map=new LinkedHashMap<>();
+        for(char c1:str10.toCharArray()){
+            map.put(c1,map.getOrDefault(c1,0)+1);
+        }
+        System.out.println("Occurence is "+map);
+
+        //Find Upper and Lower Case count,
+    String str11="aaaAAbbbBBccc2312321312@!@#@#@#CCddDD deEfff ghhhHiiiI";
+    int upperCase=0;
+    int lowerCase=0;
+    for(char a1:str11.toCharArray()){
+        if(Character.isUpperCase(a1)) upperCase++;
+        else if(Character.isLowerCase(a1)) lowerCase++;
+    }
+        System.out.println("Count of upper :"+upperCase);
+        System.out.println("Count of Lower :"+lowerCase);
+
+        //Print Upper and Lower Case:
+    String str12="aaaAAbbbBBccc2312321312@!@#@#@#CCddDD deEfff ghhhHiiiI";    
+        String upperCase1="";
+        String lowerCase1="";
+        for(char a2:str12.toCharArray()){
+            if(Character.isUpperCase(a2)) upperCase1=upperCase1+a2;
+            else if(Character.isLowerCase(a2)) lowerCase1=lowerCase1+a2;
+        }
+        System.out.println("Print of upper :"+upperCase1);
+        System.out.println("Print of Lower :"+lowerCase1);
+
+        //Find Vowels count,
+    String str13="aaaAAbbbBBccc2312321312@!@#@#@#CCddDD deEfff ghhhHiiiI";   
+    int vowels=0;
+    for(char a3:str13.toCharArray()){
+        if("AEIOUaeiou".indexOf(a3)!=-1){
+            vowels++;
+        }
+    }
+   System.out.println("Vowels count is :"+vowels);        
+
+        //Print Vowels,
+String str14="aaaAAbbbBBccc2312321312@!@#@#@#CCddDD deEfff ghhhHiiiI";        
+ 
+     //Find occurence,
+String str15="aaaAAbbbBBccc2312321312@!@#@#@#CCddDD deEfff ghhhHiiiI";     
+ 
+    }
+}
